@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.scrolling-text-container {
+  width:100%; 
+  overflow: hidden;
+  position: relative;
+}
+
+.scrolling-text {
+  white-space: nowrap;
+  position: absolute;
+  animation: scroll 20s linear infinite; 
+}
+
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@media screen and (max-width: 600px) {
+  .scrolling-text-container {
+    height: auto; 
+  }
+
+  .scrolling-text {
+    white-space: nowrap;
+    position: relative;
+    animation: none; 
+    overflow-x: auto; 
+    animation: none; 
+  }
+}
+
+.menu li{
+  margin-left: 20px;
+}
+
+
+.mega-header {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+  background-color: #dcdcdc;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #d32828;
+  border-radius: 500px;
+  box-shadow:0px 0px 6px 2px dcdcdc inset;
+  
+}
+::-webkit-scrollbar-track {
+  background-color: #dcdcdc;
+  border-radius: 10px; /* Adjust the border radius as needed */
+}
+
+.box-container{
+  cursor: pointer;
+}
+.box-design {
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for smooth animation */
+  transform: translate(-10px, 10px); /* Move the box 10px to the left and 10px down */
+}
+
+.box-container:hover .box-design {
+  opacity: 0;
+  transform: translate(0px, 0px); /* Move the box 10px to the left and 10px down */
+
+}
+.text-over{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: fit-content;
+  height: fit-content;
+  transform: translateY(-50% );
+  background-color: rgba(255,255,255,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-scale img {
+  transition: transform 0.7s ease-in-out; /* Apply transition for both hover and non-hover states */
+}
+
+.custom-scale:hover img {
+  transform: scale(1.1);
+  transition: transform 0.7s ease-in-out;
+}
+
+.social-link{
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+display: flex;
+justify-content: center;
+gap: 10px;
+
+}
+.social-back{
+  background-color: #fff;
+  height: 35px;
+  width: 35px;
+  padding: 10px;
+  border-radius: 50%;
+scale: 0;
+transition: 0.6s;
+}
+.custom-scale:hover .social-back{
+  scale: 1;
+}
+
